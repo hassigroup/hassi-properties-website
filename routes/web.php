@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/about', function () {
+    return Inertia::render('About', [
+        'company' => 'Hassi Properties',
+    ]);
+});
+
 Route::inertia('/', 'Welcome')->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
